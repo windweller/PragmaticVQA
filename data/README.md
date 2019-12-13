@@ -8,10 +8,10 @@ bash download.sh
 
 The downloaded `json` file has the following format:
 
-```json
+```
 {
-    'question': str,
-    'answer1': str,
+    question: str,
+    answer1: str,
     'image1': corresponding MSCOCO image file ID,
     'answer2': str,
     'image2': corresponding MSCOCO image file ID,
