@@ -1,6 +1,10 @@
 # How to download the data
 
-We a
+We provide a way to download preprocessed data. 
+
+```
+bash download.sh
+```
 
 # How to run data processing script
 
