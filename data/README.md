@@ -50,10 +50,8 @@ After downloading the data, you can run `display(train_data, range(20))` in `dat
 |                  What does it say on the ground?                  |      no entry      |   clear    |
 |           What color is the lamp post on the left side?           |       yellow       |    gray    |
 |              What kind of bike is this person riding?             |   mountain bike    | motorcycle |
-| What other passive activity is the skateboarder participating in? | listening to music |    none    |
 |                    What is on the window sill?                    |  apple and banana  |    cat     |
 |     Is the tree in the forefront of the picture alive or dead?    |        dead        |   alive    |
-|                   What is the name of this Inn?                   |      hobo inn      |    none    |
 |                     What color is the trailer?                    |       orange       |   white    |
 |                What kind of vehicle is on the left?               |       truck        |   train    |
 |                   What kind of tools are these?                   |      wrenches      | toothbrush |

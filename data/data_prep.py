@@ -9,6 +9,7 @@ We can also split the "validation" into a "test" if we want.
 
 import json
 from tqdm import tqdm
+from collections import defaultdict
 
 def load_annotations(root='./data/vqa/vqa2_raw/'):
     """Annotations come from a specific format of:
@@ -101,6 +102,8 @@ def construct_contrastive_dataset(train_tup, val_tup):
 
     train_data = []
     val_data = []
+    train_stats = defaultdict(int)
+    val_stats = defaultdict(int)
     for split in ['train', 'val']:
         anno, quests, comp_list = eval(split+'_tup')
         data = eval(split+'_data')
@@ -118,6 +121,11 @@ def construct_contrastive_dataset(train_tup, val_tup):
             # assert ans1['answer_type'] == ans2['answer_type'], print(q1_str, ans1, ans2)
             assert ans1['image_id'] == q1_str['image_id']
             assert ans2['image_id'] == q2_str['image_id']
+            if ans1['multiple_choice_answer'] == ans2['multiple_choice_answer']:
+                continue
+
+            if ans1['multiple_choice_answer'] == 'none' or ans2['multiple_choice_answer'] == 'none':
+                continue
 
             data.append({
                 'question': q1_str['question'],
@@ -129,6 +137,12 @@ def construct_contrastive_dataset(train_tup, val_tup):
                 'answer_type2': ans2['answer_type'],
                 'question_type': ans1['question_type']
             })
+
+            eval(split+"_stats")[ans1['answer_type']] += 1
+
+    print("total number of train: {}".format(len(train_data)))
+    print('total number of validation: {}'.format(len(val_data)))
+    print(train_stats)
     return train_data, val_data
 
 def extract_and_save_answer_type(data_list, answer_type='other'):
@@ -142,7 +156,7 @@ def extract_and_save_answer_type(data_list, answer_type='other'):
     return processed_data
 
 if __name__ == '__main__':
-    STAGE = 'stage3'
+    STAGE = 'stage1'
     # Stage 1
     if STAGE == 'stage1':
         print('loading...')
@@ -165,4 +179,3 @@ if __name__ == '__main__':
         train_data, val_data = extract_and_save_answer_type([train_data, val_data], 'other')
         json.dump(train_data, open('./data/vqa/pragmatic_other_train.json', 'w'))
         json.dump(val_data, open('./data/vqa/pragmatic_other_val.json', 'w'))
-        STAGE = 'stage3'
