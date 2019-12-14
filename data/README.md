@@ -60,6 +60,44 @@ After downloading the data, you can run `display(train_data, range(20))` in `dat
 +-------------------------------------------------------------------+--------------------+------------+
 ```
 
+# Question Rephrasing
+
+You can use `python display.py` to show a list of pragmatic/literal questions. "Pragmatic Q3" is the original VQA 2.0 question. "Literal Q1/Q2" are our rephrased questions with answers added into the question.
+
+```
+Pragmatic Q3: What type of fruit is in the bottom right corner?
+Literal Q1: Are apples in the bottom right corner ?
+Literal Q2: Is orange in the bottom right corner ?
+
+Pragmatic Q3: What color is the plate?
+Literal Q1: Is the plate blue and white ?
+Literal Q2: Is the plate white ?
+
+Pragmatic Q3: What type of meat do you see in the sandwich?
+Literal Q1: Does you see chicken in the sandwich ?
+Literal Q2: Does you see ham in the sandwich ?
+
+Pragmatic Q3: What color is the spot below the cat's nose?
+Literal Q1: Is black the spot below the cat 's nose ?
+Literal Q2: Is white the spot below the cat 's nose ?
+
+Pragmatic Q3: What does the photo say at the bottom?
+Literal Q1: Does the photo say dutchsimba at the bottom ?
+Literal Q2: Does the photo say nothing at the bottom ?
+
+Pragmatic Q3: What color is the bowl?
+Literal Q1: Is the bowl brown ?
+Literal Q2: Is the bowl white ?
+
+Pragmatic Q3: What does it say on the ground?
+Literal Q1: Does it say no entry on the ground ?
+Literal Q2: Does it say clear on the ground ?
+
+Pragmatic Q3: What is covering the ground?
+Literal Q1: Is snow covering the ground ?
+Literal Q2: Is sand covering the ground ?
+```
+
 # How to run data processing script
 
 You must be under the parent level directory, if you cloned the github to your home directory, such as `~/PragmaticVQA/`, then execute the following command from there:

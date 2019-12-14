@@ -127,6 +127,9 @@ def construct_contrastive_dataset(train_tup, val_tup):
             if ans1['multiple_choice_answer'] == 'none' or ans2['multiple_choice_answer'] == 'none':
                 continue
 
+            if ans1['multiple_choice_answer'] == '0' or ans2['multiple_choice_answer'] == '0':
+                continue
+
             data.append({
                 'question': q1_str['question'],
                 'answer1': ans1['multiple_choice_answer'],
