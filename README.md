@@ -1,3 +1,9 @@
+Related to:
+
+Visual story telling
+
+Contrastive captioning (with inferred reference)
+
 Relevant papers:
 
 DIVERSE BEAM SEARCH: DECODING DIVERSE SOLUTIONS FROM NEURAL SEQUENCE MODELS (https://arxiv.org/pdf/1610.02424v2.pdf) (https://github.com/ashwinkalyan/dbs)
